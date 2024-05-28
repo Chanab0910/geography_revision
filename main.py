@@ -54,14 +54,18 @@ class Work:
         if topic.lower() == 'all':
             self.initial_phase(self.topics)
         else:
-            spec = int(input('Do you want to learn (1)Globalisation, (2)Changing Places, or (3)Resource Management: '))
-            if spec == 1:
-                self.initial_phase(self.globalisation)
-            elif spec == 2:
-                self.initial_phase(self.changing_places)
-            elif spec == 3:
-                self.initial_phase(self.resources)
-            else:
+            try:
+                spec = int(input('Do you want to learn (1)Globalisation, (2)Changing Places, or (3)Resource Management: '))
+                if spec == 1:
+                    self.initial_phase(self.globalisation)
+                elif spec == 2:
+                    self.initial_phase(self.changing_places)
+                elif spec == 3:
+                    self.initial_phase(self.resources)
+                else:
+                    print("I dont know how you've managed to not select an appropriate answer, but it looks like you are "
+                          "going to have to restart the program")
+            except:
                 print("I dont know how you've managed to not select an appropriate answer, but it looks like you are "
                       "going to have to restart the program")
 
